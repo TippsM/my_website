@@ -178,7 +178,7 @@ def education():
         with col3:
             st.write("Miami, Fl")
 
-    st.divider()
+    st.divider() # new
 
 def work_experience():
 
