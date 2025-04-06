@@ -1,6 +1,7 @@
 import streamlit as st
 import main_functions
 import requests
+import pandas as pd
 
 url = "https://drive.google.com/uc?export=download&id=1pi6WVdYVrFMtnvr5LoF3bJQUASIicqmF"
 response = requests.get(url)
@@ -34,8 +35,7 @@ with projects:
     main_functions.projects()
 
 with courses:
-    st.title("Courses 📚")
-    st.subheader("Completed Courses Information")
+    st.title("Completed Courses 📚")
 
     main_functions.courses()
 

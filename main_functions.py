@@ -1,3 +1,5 @@
+from operator import index
+
 import streamlit as st
 import streamlit_extras.stylable_container as ste
 import pandas as pd
@@ -6,51 +8,23 @@ def courses():
 
     st.divider()
 
-    with st.expander("COP 2210 - Programming 1"):
-        st.write("More Info...")
+    course = ["COP 2210 - Programming 1", "COP 3337 - Programming 2",
+              "COP 3530 - Data Structures", "COP 4338 - Systems Programming",
+              "COP 4710 - Database Management", "CDA 3102 - Computer Architecture",
+              "CAP 4104 - Human-Computer Interaction", "CEN 4010 - Software Engineering 1",
+              "CAP 4770 - Introduction to Data Mining", "CAP 4630 - Introduction to Artificial Intelligence",
+              "MAD 2104 - Discrete Mathematics", "MAD 3512 - Theory of Algorithms", "CGS 3095 - Technology in the Global Arena",
+              "CJE 4694 - Cyber Crime", "ISS 3613 - Issues in Global Cybersecurity Policy"]
 
-    with st.expander("COP 3337 - Programming 2"):
-            st.write("More Info...")
+    #st.subheader("Select Some Courses to Display")
+    #selected_courses = st.multiselect("**Courses**", options=course)
 
-    with st.expander("COP 3530 - Data Structures"):
-            st.write("More Info...")
+    course_df = {
+        "Courses Taken" : course
+    }
 
-    with st.expander("COP 4338 - Systems Programming"):
-            st.write("More Info...")
 
-    with st.expander("COP 4710 - Database Management"):
-            st.write("More Info...")
-
-    with st.expander("CDA 3102 - Computer Architecture"):
-            st.write("More Info...")
-
-    with st.expander("CAP 4104 - Human-Computer Interaction"):
-            st.write("More Info...")
-
-    with st.expander("CEN 4010 - Software Engineering 1"):
-            st.write("More Info...")
-
-    with st.expander("CAP 4770 - Introduction to Data Mining"):
-            st.write("More Info...")
-
-    with st.expander("CAP 4630 - Introduction to Artificial Intelligence"):
-            st.write("More Info...")
-
-    with st.expander("MAD 2104 - Discrete Mathematics"):
-            st.write("More Info...")
-
-    with st.expander("MAD 3512 - Theory of Algorithms"):
-            st.write("More Info...")
-
-    with st.expander("CGS 3095 - Technology in the Global Arena"):
-            st.write("More Info...")
-
-    with st.expander("CJE 4694 - Cyber Crime"):
-            st.write("More Info...")
-
-    with st.expander("ISS 3613 - Issues in Global Cybersecurity Policy"):
-            st.write("More Info...")
-
+    st.dataframe(course_df, hide_index=True)
 
     st.divider()
 
@@ -187,8 +161,8 @@ def work_experience():
     with st.expander("Florida International University **(FIU)**"):
         st.divider()
         st.write("""
-        Explained and helped students understand fundamental concepts in Data Science operating Python programming and
-Google Collab; in a class of 60+ students.
+        Explained and helped students understand fundamental concepts in **Data Science** operating **Python** programming and
+**Google Collab**; in a class of **60+** students.
 Conduct research on learning preferences, analyzing how students engage with different teaching formats in a data
 science course.
 Collect and evaluate student feedback, by way of surveys, identifying trends to improve course structure and
@@ -204,7 +178,12 @@ instructional methods.""")
 
     with st.expander("BJ's Wholesale Club"):
         st.divider()
-        st.write("More Info")
+        st.write("""
+        As a produce clerk, I helped manage and optimize daily operations within a fast-paced team. 
+        From monitoring stock levels to improving organization and quality control, I learned how to spot inefficiencies, 
+        adapt to system changes, and support cross-functional teamwork—foundations that translate well into tech roles 
+        focused on systems thinking and collaboration.
+        """)
         st.divider()
         col1, col2, col3 = st.columns([4, 5, 1.5])
         with col1:
@@ -216,7 +195,12 @@ instructional methods.""")
 
     with st.expander("Winn-Dixie"):
         st.divider()
-        st.write("More Info")
+        st.write("""
+        In my role as a cashier, I balanced technical and interpersonal responsibilities—operating 
+        digital systems for transactions and returns while communicating effectively with over **100+** 
+        customers daily. I consistently ensured data accuracy, responded to real-time challenges, and 
+        collaborated with team members to optimize workflow efficiency—skills I’m excited to bring into a tech-driven space.
+        """)
         st.divider()
         col1, col2, col3 = st.columns([4, 6, 3])
         with col1:
